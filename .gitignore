@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+#/docs # commented for gh pages
 
 # misc
 .DS_Store
