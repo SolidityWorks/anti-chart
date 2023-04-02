@@ -147,7 +147,6 @@ const fresh = (pArr: any) => {
 }
 
 export function App() {
-    console.log('env API:', process.env.API_HOST)
     const [points, setPoints] = useState(ip)
     // let [searchParams, setSearchParams] = useSearchParams();
 
