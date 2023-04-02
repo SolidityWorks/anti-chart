@@ -38,7 +38,7 @@ const options = {
     },
 }
 
-const evtSource = new EventSource("http://127.0.0.1:8008/ssf/USDT,BUSD/RUB")
+const evtSource = new EventSource(`${process.env.REACT_APP_API_HOST}/ssf/USDT,BUSD/RUB`)
 
 evtSource.onopen = (/*e*/) => console.log("Connected."/*, e*/)
 
@@ -147,6 +147,7 @@ const fresh = (pArr: any) => {
 }
 
 export function App() {
+    console.log('env API:', process.env.API_HOST)
     const [points, setPoints] = useState(ip)
     // let [searchParams, setSearchParams] = useSearchParams();
 
