@@ -134,6 +134,7 @@ const pairs = {
 }
 const ip: any = {}
 
+// eslint-disable-next-line array-callback-return
 Object.entries(pairs).map((v, k) => {
     ip[v[0]] = []
 });
@@ -151,6 +152,7 @@ export function App() {
 
     const dsets: any = {'datasets': []}
 
+    // eslint-disable-next-line array-callback-return
     Object.entries(pairs).map((v, k) => {
         const [pid, [coin, cur, isSell]] = v;
         dsets.datasets.push({
@@ -166,7 +168,7 @@ export function App() {
         for (const k in pc) {
             if (nd[k]) { // at least 1 new point received
                 if (pc[k].length > 1) { // old points exists in chart
-                    if (pc[k].slice(-1).y == nd[k].y) { // the last point in chart == new received point
+                    if (pc[k].slice(-1).y === nd[k].y) { // the last point in chart == new received point
                         pc[k].pop() //todo: prev-prev point check
                     }
                     fresh(pc[k])
